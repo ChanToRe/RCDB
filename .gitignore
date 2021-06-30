@@ -6,7 +6,8 @@
 *.pot
 *.pyc
 __pycache__/
-local_settings/
+local_settings.py
+.settings/base.py
 db.sqlite3
 db.sqlite3-journal
 media
@@ -258,3 +259,6 @@ Temporary Items
 # Cython debug symbols
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,linux,python,django
+.gitsecret/keys/random_seed
+!*.secret
+config/settings/base.py
