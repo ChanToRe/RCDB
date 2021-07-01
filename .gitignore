@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/macos,linux,python,django
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,linux,python,django
+# Created by https://www.toptal.com/developers/gitignore/api/macos,python,django
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,python,django
 
 ### Django ###
 *.log
@@ -149,21 +149,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-### Linux ###
-*~
-
-# temporary files which can be created if a process still has a handle open of a deleted file
-.fuse_hidden*
-
-# KDE directory preferences
-.directory
-
-# Linux trash folder which might appear on any partition or disk
-.Trash-*
-
-# .nfs files are created when an open file is removed but is still being accessed
-.nfs*
-
 ### macOS ###
 # General
 .DS_Store
@@ -257,7 +242,4 @@ Temporary Items
 
 # Cython debug symbols
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,linux,python,django
-.gitsecret/keys/random_seed
-!*.secret
-config/settings/base.py
+# End of https://www.toptal.com/developers/gitignore/api/macos,python,django
