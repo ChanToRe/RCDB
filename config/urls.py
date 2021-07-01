@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from notice import views
+from rcdb import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('notice/', include('notice.urls')),
     path('info/', include('info.urls')),
     path('', include('main.urls')),
-    path('rc_db/', include('rc_db.urls')),
+    path('rcdb/', include('rcdb.urls')),
 ]
