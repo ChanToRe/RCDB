@@ -241,3 +241,6 @@ Temporary Items
 # Cython debug symbols
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,python,django
+.gitsecret/keys/random_seed
+!*.secret
+config/settings.py
