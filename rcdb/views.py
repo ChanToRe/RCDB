@@ -3,13 +3,28 @@ from django.http import HttpResponse
 from .models import rcdb
 from django.contrib.auth.models import User
 from django.core import serializers
-#def index(request):
-#   return render(request, 'rcdb/index.html')
+import json
 
-def get_RCDB(request):
-    rcdbs = rcdb.objects.all()
-    rcdb_list = serializers.serialize('json', rcdbs)
-    return HttpResponse(rcdb_list, content_type="text/json-comment-filtered")
+def index(request):
+    rcdbsDict = []
 
-def apiRCDB(request):
-    return render(request, 'rcdb/index.html')
+    for data in rcdb.objects.all():
+        tmpdict = {
+            "id" : data.id,
+            "Name" : data.Name,
+            "State" : data.State,
+            "City": data.City,
+            "Site" : data.Site,
+            "Material" : data.Material,
+            "Weight_g" : data.Weight_g,
+            "Laboratory" : data.Laboratory,
+            "LabID" : data.LabID,
+            "Age_BP" : data.Age_BP,
+            "Error" : data.Error,
+            "Report" : data.Report
+        }
+        rcdbsDict.append(tmpdict)
+
+    rcdbsJson = json.dumps(rcdbsDict, ensure_ascii=False)
+    context = {'rcdbsJson' : rcdbsJson}
+    return render(request, 'rcdb/index.html', context)

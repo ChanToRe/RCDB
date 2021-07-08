@@ -5,24 +5,47 @@
     <div style="margin:5% 15%;">
         <h1>RCDB</h1>
     </div>
+
     <div id="example" style="margin:5% 15%;">
+        <div id="export-buttons" class="visible">
+        <button id="export-csv" class="btn size-medium bg-blue text-white shadow hover-moveup" style="margin-right: 5px;">
+        Export to a .csv file</button></div>       
         <script>
-            var data = [
-             ['', 'Ford', 'Tesla', 'Toyota', 'Honda'],
-              ['2017', 10, 11, 12, 13],
-              ['2018', 20, 11, 14, 13],
-              ['2019', 30, 15, 12, 13]
-            ];
-        
+            let getList = [];
+            var rcdbs = JSON.parse("{{rcdbsJson|escapejs}}");
+            for (let i =0; i<rcdbs.length;i++){
+                getList.push([
+                rcdbs[i].id, 
+                rcdbs[i].Name,
+                rcdbs[i].State,
+                rcdbs[i].City,
+                rcdbs[i].Site,
+                rcdbs[i].Material,
+                rcdbs[i].Weight_g,
+                rcdbs[i].Laboratory,
+                rcdbs[i].LabID,
+                rcdbs[i].Age_BP,
+                rcdbs[i].Error,
+                rcdbs[i].Report
+                ])
+            };
+            
             var container = document.getElementById('example');
             var hot = new Handsontable(container, {
-              data: data,
+              data: getList,
               rowHeaders: true,
               colHeaders: true,
               filters: true,
-              dropdownMenu: true
+              dropdownMenu: true,
+              colHeaders: ['id', 'Name','State','City', 'Site', 'Material', 'Weight_g', 'Laboratory', 'LabID', 'Age_BP', 'Error', 'Report' ]
             });
+            document.getElementById("export-csv").addEventListener("click", function(event) { 
+                hot.getPlugin("exportFile").downloadFile("csv", {filename: "rcdb"});
+                })
+        
         </script>
+        
     </div>
+    
 </body>
 {% endblock %}
