@@ -2,7 +2,7 @@
 {% load md_filter %}
 {% block content %}
 <body>
-    <div id="example" style="margin-top:5%">
+    <div id="example" style="margin-top:5%" style="margin-bottom
         <div id="export-buttons" class="visible">
         <button id="export-csv" class="btn size-medium bg-blue text-white shadow hover-moveup" style="margin-right: 5px;">
         Export to a .csv file</button></div>       
@@ -26,7 +26,7 @@
                 ])
             };
 
-            var container = document.getElementById('example');
+            var container = document.getElementById('example').style.fontSize = '9pt';
             var hot = new Handsontable(container, {
               data: getList,
               rowHeaders: true,
