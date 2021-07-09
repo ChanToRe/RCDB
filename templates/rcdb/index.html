@@ -1,28 +1,48 @@
-from .models import rcdb
-from django.contrib.auth.models import User
-from django.core import serializers
-import json
+{% extends 'base.html' %}
+{% load md_filter %}
+{% block content %}
+<body>
+    <div style="margin:5% 15%;">
+        <h1>RCDB</h1>
+    </div>
 
-def index(request):
-    rcdbsDict = []
+    <div id="example" style="margin:5% 15%;">
+        <div id="export-buttons" class="visible">
+        <button id="export-csv" class="btn size-medium bg-blue text-white shadow hover-moveup" style="margin-right: 5px;">
+        Export to a .csv file</button></div>       
+        <script>
+            let getList = [];
+            var rcdbs = JSON.parse("{{rcdbsJson|escapejs}}");
+            for (let i =0; i<rcdbs.length;i++){
+                getList.push([
+                rcdbs[i].id, 
+                rcdbs[i].Name,
+                rcdbs[i].State,
+                rcdbs[i].City,
+                rcdbs[i].Site,
+                rcdbs[i].Material,
+                rcdbs[i].Weight_g,
+                rcdbs[i].Laboratory,
+                rcdbs[i].LabID,
+                rcdbs[i].Age_BP,
+                rcdbs[i].Error,
+                rcdbs[i].Report
+                ])
+            };
 
-    for data in rcdb.objects.all():
-        tmpdict = {
-            "id" : data.id,
-            "Name" : data.Name,
-            "State" : data.State,
-            "City": data.City,
-            "Site" : data.Site,
-            "Material" : data.Material,
-            "Weight_g" : data.Weight_g,
-            "Laboratory" : data.Laboratory,
-            "LabID" : data.LabID,
-            "Age_BP" : data.Age_BP,
-            "Error" : data.Error,
-            "Report" : data.Report
-        }
-        rcdbsDict.append(tmpdict)
-
-    rcdbsJson = json.dumps(rcdbsDict, ensure_ascii=False)
-    context = {'rcdbsJson' : rcdbsJson}
-    return render(request, 'rcdb/index.html', context) 
+            var container = document.getElementById('example');
+            var hot = new Handsontable(container, {
+              data: getList,
+              rowHeaders: true,
+              colHeaders: true,
+              filters: true,
+              dropdownMenu: true,
+              colHeaders: ['id', 'Name','State','City', 'Site', 'Material', 'Weight_g', 'Laboratory', 'LabID', 'Age_BP', 'Error', 'Report' ]
+            });
+            document.getElementById("export-csv").addEventListener("click", function(event) { 
+                hot.getPlugin("exportFile").downloadFile("csv", {filename: "rcdb"});
+                })
+        </script>
+    </div>
+</body>
+{% endblock %}
