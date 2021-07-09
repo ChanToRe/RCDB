@@ -2,9 +2,12 @@
 {% load md_filter %}
 {% block content %}
 <body>
-    <div id="example" style="margin:5% 5%">
+    <div id="title" style="margin : 2% 5% 0% 5%">
+            <h1>RCDB</h1>
+    </div>
+    <div id="example" style="margin:0% 5%">
         <div id="export-buttons" class="visible">
-        <button id="export-csv" class="btn size-medium bg-blue text-white shadow hover-moveup" style="margin-right: 5px;">
+        <button id="export-csv" class="btn size-medium bg-blue text-black shadow hover-moveup" style="margin : 2% 0% 5% 0%;">
         Export to a .csv file</button></div>       
         <script>
             let getList = [];
@@ -27,7 +30,7 @@
             };
 
             var container = document.getElementById('example');
-            document.getElementById("example").style.fontSize = '9px';
+            document.getElementById("example").style.fontSize = '10pt';
             var hot = new Handsontable(container, {
               data: getList,
               rowHeaders: true,
@@ -41,6 +44,6 @@
                 hot.getPlugin("exportFile").downloadFile("csv", {filename: "rcdb"});
                 })
         </script>
-    </div>
+    </>
 </body>
 {% endblock %}
