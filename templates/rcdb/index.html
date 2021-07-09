@@ -1,28 +1,28 @@
-{% extends 'base.html' %}
-{% load md_filter %}
-{% block content %}
-<body>
-    <div style="margin:5% 15%;">
-        <h1>RCDB</h1>
-    </div>
-    <div id="example" style="margin:5% 15%;">
-        <script>
-            var data = [
-             ['', 'Ford', 'Tesla', 'Toyota', 'Honda'],
-              ['2017', 10, 11, 12, 13],
-              ['2018', 20, 11, 14, 13],
-              ['2019', 30, 15, 12, 13]
-            ];
-        
-            var container = document.getElementById('example');
-            var hot = new Handsontable(container, {
-              data: data,
-              rowHeaders: true,
-              colHeaders: true,
-              filters: true,
-              dropdownMenu: true
-            });
-        </script>
-    </div>
-</body>
-{% endblock %}
+from .models import rcdb
+from django.contrib.auth.models import User
+from django.core import serializers
+import json
+
+def index(request):
+    rcdbsDict = []
+
+    for data in rcdb.objects.all():
+        tmpdict = {
+            "id" : data.id,
+            "Name" : data.Name,
+            "State" : data.State,
+            "City": data.City,
+            "Site" : data.Site,
+            "Material" : data.Material,
+            "Weight_g" : data.Weight_g,
+            "Laboratory" : data.Laboratory,
+            "LabID" : data.LabID,
+            "Age_BP" : data.Age_BP,
+            "Error" : data.Error,
+            "Report" : data.Report
+        }
+        rcdbsDict.append(tmpdict)
+
+    rcdbsJson = json.dumps(rcdbsDict, ensure_ascii=False)
+    context = {'rcdbsJson' : rcdbsJson}
+    return render(request, 'rcdb/index.html', context) 
