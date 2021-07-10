@@ -2,13 +2,15 @@
 {% load md_filter %}
 {% block content %}
 <body>
-    <div id="title" style="margin : 2% 5% 0% 5%">
+    <div id="title" style="margin : 2% 1% 0% 5%">
             <h1>RCDB</h1>
     </div>
-    <div id="example" style="margin:0% 5%">
-        <div id="export-buttons" class="visible">
-        <button id="export-csv" class="btn size-medium bg-blue text-black shadow hover-moveup" style="margin : 2% 0% 5% 0%;">
-        Export to a .csv file</button></div>       
+
+    <div id="export-buttons" class="visible" style="margin: 0% 0% 1% 5%">
+        <button id="export-csv" class="btn size-medium bg-blue text-black shadow hover-moveup">
+        Export csv file</button></div> 
+        
+    <div id="example" style="margin:0% 0% 0% 5%">      
         <script>
             let getList = [];
             var rcdbs = JSON.parse("{{rcdbsJson|escapejs}}");
@@ -44,6 +46,6 @@
                 hot.getPlugin("exportFile").downloadFile("csv", {filename: "rcdb"});
                 })
         </script>
-    </>
+    </div>
 </body>
 {% endblock %}
