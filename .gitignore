@@ -244,3 +244,6 @@ Temporary Items
 .gitsecret/keys/random_seed
 !*.secret
 config/settings.py
+
+# Shell
+Test.sh
