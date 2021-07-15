@@ -14,6 +14,7 @@
     <div id="example" style="margin:0% 5% 5% 5%">      
         <script>
             let getList = [];
+            let rabelList = ['id', 'Name','State','City', 'Site', 'Material', 'Weight_g', 'Laboratory', 'LabID', 'Age_BP', 'Error', 'Report' ];
             var rcdbs = JSON.parse("{{rcdbsJson|escapejs}}");
             for (let i =0; i<rcdbs.length;i++){
                 getList.push([
@@ -41,10 +42,12 @@
               filters: true,
               dropdownMenu: true,
               licenseKey: 'non-commercial-and-evaluation',
-              colHeaders: ['id', 'Name','State','City', 'Site', 'Material', 'Weight_g', 'Laboratory', 'LabID', 'Age_BP', 'Error', 'Report' ]
+              colHeaders: rabelList
+
             });
             document.getElementById("export-csv").addEventListener("click", function(event) { 
-                hot.getPlugin("exportFile").downloadFile("csv", {filename: "rcdb"});
+                hot.getPlugin("exportFile").downloadFile("csv", {filename: "rcdb", columnHeaders: true});
+                
                 })
         </script>
     </div>
