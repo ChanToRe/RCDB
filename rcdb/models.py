@@ -16,3 +16,6 @@ class rcdb(models.Model):
     Age_BP = models.IntegerField()
     Error = models.IntegerField()
     Report = models.TextField()
+
+    def __str__(self):
+        return self.LabID
