@@ -17,7 +17,7 @@
         *LabID가 기재되어있지 않은 경우 NULL로 표기됩니다.
     </div>
         
-    <div id="example" style="margin:0% 5% 5% 5%">      
+    <div id="Handsontable" style="margin:0% 5% 5% 5%">      
         <script>
             let getList = [];
             let rabelList = ['id', 'Name','State','City', 'Site', 'Material', 'Weight_g', 'Laboratory', 'LabID', 'Age_BP', 'Error', 'Report' ];
@@ -39,8 +39,8 @@
                 ])
             };
 
-            var container = document.getElementById('example');
-            document.getElementById("example").style.fontSize = '10pt';
+            var container = document.getElementById('Handsontable');
+            document.getElementById("Handsontable").style.fontSize = '10pt';
             var hot = new Handsontable(container, {
               data: getList,
               rowHeaders: true,
