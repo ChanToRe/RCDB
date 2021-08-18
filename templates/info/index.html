@@ -1,11 +1,22 @@
 {% extends 'base.html' %}
 {% load md_filter %}
 {% block content %}
-<div style="margin:5% 15%;">
+
+<style>
+  #info-contents {
+    margin:5% 15%;
+  }
+
+  #techstack{
+    padding: 5px;
+  }
+</style>
+
+<div id="info-contents">
     <center><img src="https://github.com/ChanToRe/RCDB/blob/master/img/Info_IMG.png?raw=true"></center>
     <br>
     <br>
-    <h2 style="padding-bottom: 5px;">Introduction</h2>
+    <h2>Introduction</h2>
       1950년, Willard Libby(1908~1980)가 방사성-탄소연대 측정법을 개발했고, 1960년에는 방사성-탄소연대 측정법으로 노벨화학상을 수상했습니다.<br><br>
       이후 고고학, 지질학과 같은 수많은 분야에서 방사성-탄소연대측정법이 활용되기 시작했고, 수륜연대보정이나 AMS 등을 통해 연대의 정확도와 활용도를 높힐 수 있었습니다.<br><br>
       특히, 대한민국의 경우 방사성-탄소연대 데이터의 밀도가 다른 국가에 비해 월등히 높아서 더욱 큰 효용성과 잠재력을 지니고 있습니다.<br><br>
@@ -46,11 +57,11 @@
     <hr>
 
     <h2>Tech Stack</h2>
-      <img style="padding: 5px;" alt="AWS" src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white"/> <img style="padding: 5px;" alt="Bootstrap" src="https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white"/> <img style="padding: 5px;" alt="CSS3" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/> <img alt="Django" src="https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white"/>
+      <img id="techstack" alt="AWS" src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white"/> <img id="techstack" alt="Bootstrap" src="https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white"/> <img id="techstack" alt="CSS3" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/> <img id="techstack" alt="Django" src="https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white"/>
       <br>
-      <img style="padding: 5px;" alt="Git" src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white"/> <img style="padding: 5px;" alt="GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/> <img style="padding: 5px;" alt="Handsontable" src="https://img.shields.io/badge/Handsontable-%2343853D.svg?style=for-the-badge&logo=node-dot-js&logoColor=white"/> <img alt="HTML5" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
+      <img id="techstack" alt="Git" src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white"/> <img id="techstack" alt="GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/> <img id="techstack" alt="Handsontable" src="https://img.shields.io/badge/Handsontable-%2343853D.svg?style=for-the-badge&logo=node-dot-js&logoColor=white"/> <img id="techstack" alt="HTML5" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
       <br>
-      <img style="padding: 5px;" alt="JavaScript" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img style="padding: 5px;" alt="Nginx" src="https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white"/> <img style="padding: 5px;" alt="Python" src="https://img.shields.io/badge/python-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white"/> <img alt="SQLite" src ="https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white"/></p>
+      <img id="techstack" alt="JavaScript" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img id="techstack" alt="Nginx" src="https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white"/> <img id="techstack" alt="Python" src="https://img.shields.io/badge/python-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white"/> <img id="techstack" alt="SQLite" src ="https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white"/></p>
     
 </div>
 {% endblock %}

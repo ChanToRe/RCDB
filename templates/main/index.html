@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 {% load md_filter %}
 {% block content %}
-<div style="margin:5% 15%;">
+
+<style>
+    #main-contents {
+        margin:5% 15%;
+    }
+</style>
+
+<div id ="main-contents">
     <center>
         <img src="https://github.com/ChanToRe/RCDB/blob/master/img/Main.png?raw=true"><br>
         <br>
@@ -9,10 +16,8 @@
     <br>
     <h2>RCDB는 PC 사용자를 대상으로 제작되었습니다.</h2>
     <br>
-    -&gt; RCDB가 무엇인지 궁금하다면, <a href="http://rcdb.kr/info">Info</a>를 클릭하세요.<br>
-    <br>
-    -&gt; RCDB의 공지를 확인하고 싶다면, <a href="http://rcdb.kr/notice">Notice</a>를 클릭하세요.<br>
-    <br>
-    -&gt; RCDB를 사용하고 싶다면, <a href="http://rcdb.kr/rcdb">RCDB</a>를 클릭하세요.
+    <p>&#10145; RCDB가 무엇인지 궁금하다면, <a href="http://rcdb.kr/info">Info</a>를 클릭하세요.</p>
+    <p>&#10145; RCDB의 공지를 확인하고 싶다면, <a href="http://rcdb.kr/notice">Notice</a>를 클릭하세요.</p>
+    <p>&#10145; RCDB를 사용하고 싶다면, <a href="http://rcdb.kr/rcdb">RCDB</a>를 클릭하세요.</p>
 </div>
 {% endblock %}
