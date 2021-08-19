@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% load md_filter %}
 {% block content %}
-<div class="container my-3">
+<style>
+    #notice-detail{
+        min-width: 750px;
+    }
+</style>
+
+<div id="notice-detail" class="container my-3">
     <h2 class="border-bottom py-2">{{ notice.subject }}</h2>
     <div class="card my-3">
         <div class="card-body">
