@@ -1,0 +1,41 @@
+/*main*/
+#main-contents {
+    margin:5% 15%;
+}
+
+/*info*/
+#info-contents {
+    margin:5% 15%;
+}
+
+#techstack{
+    padding: 5px;
+}
+
+/*notice*/
+#notice-detail{
+    min-width: 750px;
+}
+#notice-list{
+    min-width: 750px;
+}
+#notice-notice{
+    margin-top : 50px;
+}
+
+/*rcdb*/
+#title {
+    margin: 2% 1% 0% 5%;
+}
+
+#export-buttons {
+    margin: 0% 0% 1% 5%
+}
+
+#rcdb-notice {
+    margin:0% 5% 2% 5%
+}
+
+#Handsontable {
+    margin:0% 5% 5% 5%;
+}
