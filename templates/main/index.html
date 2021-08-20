@@ -1,13 +1,21 @@
-{% extends 'base.html' %}
-{% load md_filter %}
-{% block content %}
-<link rel="stylesheet" href="/static/style.css" type="text/css">
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/static/favicon.ico"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/static/jquery-3.6.0.min.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
+    <title>RCDB</title>
+</head>
 
+<body>
+{% include "navbar.html" %}
 <div id ="main-contents">
-    <center>
-        <img src="https://github.com/ChanToRe/RCDB/blob/master/img/Main.png?raw=true"><br>
-        <br>
-    </center>
+    <center><img src="https://github.com/ChanToRe/RCDB/blob/master/img/Main.png?raw=true"><br><br></center>
     <br>
     <h2>RCDB는 PC 사용자를 대상으로 제작되었습니다.</h2>
     <br>
@@ -15,4 +23,6 @@
     <p>&#10145; RCDB의 공지를 확인하고 싶다면, <a href="http://rcdb.kr/notice">Notice</a>를 클릭하세요.</p>
     <p>&#10145; RCDB를 사용하고 싶다면, <a href="http://rcdb.kr/rcdb">RCDB</a>를 클릭하세요.</p>
 </div>
-{% endblock %}
+{% include 'footer.html' %}
+</body>
+</html>
