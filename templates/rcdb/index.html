@@ -18,7 +18,6 @@
 <body>
 {% include "navbar.html" %}
 {% load md_filter %}
-<body>
 <div id="title">
     <h1>RCDB</h1>
 </div>
@@ -52,7 +51,7 @@
                 rcdbs[i].Error,
                 rcdbs[i].Report
             ])
-        };
+        }
 
         var container = document.getElementById('Handsontable');
         document.getElementById("Handsontable").style.fontSize = '9pt';
@@ -66,13 +65,12 @@
             colHeaders: rabelList
 
         });
-        document.getElementById("export-csv").addEventListener("click", function(event) {
+        document.getElementById("export-csv").addEventListener("click", function() {
             hot.getPlugin("exportFile").downloadFile("csv", {filename: "rcdb", columnHeaders: true});
 
         })
     </script>
 </div>
-</body>
 {% include 'footer.html' %}
 </body>
 </html>
