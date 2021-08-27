@@ -39,3 +39,46 @@
 #Handsontable {
     margin:0% 5% 5% 5%;
 }
+
+/*footer*/
+#footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    background: #F1F2F4;
+    min-width: 750px;
+}
+
+#footer-contents {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 9pt;
+}
+
+/*navbar*/
+#nav {
+    position: relative;
+    min-width: 750px;
+}
+
+/*Error*/
+#error-title {
+    font: bold;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 40pt;
+}
+
+#error-middle-contents {
+    text-align: center;
+    font-size: 15pt;
+}
+
+#error-contents {
+    text-align: center;
+    font-size: 12pt;
+
+}
