@@ -50,6 +50,7 @@
     text-align: center;
     background: #F1F2F4;
     min-width: 750px;
+    z-index: 1;
 }
 
 #footer-contents {
@@ -81,4 +82,13 @@
     text-align: center;
     font-size: 12pt;
 
+}
+
+/*Up, Down button*/
+#Up-button {
+    display:scroll;
+    position:fixed;
+    bottom:15px;
+    left:15px;
+    font-size:12pt;
 }
